@@ -12,7 +12,6 @@
     href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Orbitron&display=swap"
     rel="stylesheet"
   />
-
   <!-- import  -->
   <script
     type="module"
@@ -23,7 +22,78 @@
     src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"
   ></script>
   <body>
+    <!-- progress bar starts -->
     <div class="reading-indicator"></div>
+    <!-- progress bar ends -->
+
+    <!-- Login Modal Start -->
+    <section class="login-modal center unactive">
+      <span id="login-CrossBtn">&cross;</span>
+      <div class="login-container center">
+        <h1 class="headline">Login Form</h1>
+        <form class="login-form" method="post" autocomplete="off">
+          <p>
+            <label for="login_email" class="label-text">Email</label>
+            <input
+              type="email"
+              placeholder="email@email.com"
+              autocomplete="off"
+              name="loginEmail"
+            />
+          </p>
+          <p>
+            <label for="login_password" class="label-text">Password</label>
+            <input
+              type="password"
+              placeholder="**********"
+              name="loginPassword"
+            />
+          </p>
+          <input type="submit" class="login-submit-btn" value="Login" />
+        </form>
+      </div>
+    </section>
+    <!-- Login Modal End-->
+
+    <!-- Signup Modal Start -->
+    <section class="signup-modal center">
+      <span id="signup-CrossBtn">&cross;</span>
+      <div class="signup-container center">
+        <h1 class="headline">Registration Form</h1>
+        <form class="signup-form" method="post" autocomplete="off">
+          <p>
+            <label for="signup_name" class="label-text">Name</label>
+            <input
+              type="text"
+              placeholder="John Doe"
+              name="signupName"
+              autocomplete="off"
+            />
+          </p>
+          <p>
+            <label for="signup_email" class="label-text">Email</label>
+            <input
+              type="email"
+              placeholder="email@email.com"
+              autocomplete="off"
+              name="signupEmail"
+            />
+          </p>
+          <p>
+            <label for="signup_password" class="label-text">Password</label>
+            <input
+              type="password"
+              name="signupPassword"
+              placeholder="**********"
+            />
+          </p>
+          <input type="submit" class="signup-submit-btn" value="signup" />
+        </form>
+      </div>
+    </section>
+    <!-- Signup Modal End-->
+
+    <!-- section 1 -- Image + navbar  -->
     <section class="section--1">
       <!-- navbar starts -->
       <nav class="navbar">
@@ -36,8 +106,8 @@
           <span class="logo">HireCars</span>
         </ul>
         <ul class="nav-links center right-link-section">
-          <span class="nav-link">Login</span>
-          <span class="nav-link">Signup</span>
+          <span class="nav-link" id="login">Login</span>
+          <span class="nav-link" id="signup">Signup</span>
         </ul>
       </nav>
       <!-- navbar ends -->
@@ -48,6 +118,9 @@
         <button class="rent-now-btn">Rent Now</button>
       </div>
     </section>
+    <!-- section 1 End -->
+
+    <!-- section 2 start --  About section-->
     <section class="section--2">
       <div class="section--2--part section--2-partA">
         <h1 class="section--2--part-headline">About Us</h1>
@@ -75,6 +148,9 @@
         <p></p>
       </div>
     </section>
+    <!-- section 2 End -->
+
+    <!-- section 3 start -- Best Offers -->
     <section class="section--3">
       <div class="bestOffers center">
         <h1 class="headline">Best Offer</h1>
@@ -95,6 +171,9 @@
         ar
       ></model-viewer>
     </section>
+    <!-- section 3 End -->
+
+    <!-- section 4 start --Vehicles -->
     <section class="section--4">
       <div class="vehicles--part-top-section center">
         <div class="vehicles--part-top-section-left">
@@ -174,12 +253,18 @@
         </div>
       </div>
     </section>
+    <!-- section 4 End-->
+
+    <!-- Footer starts -->
     <footer>
-      Designed by
+      Developed by
       <a href="https://jatiin.netlify.app/" class="creator" target="_blank"
         >Jatin Sharma</a
       >
+      , a Frontend Designer.
     </footer>
+    <!-- Footer End -->
+
     <script src="js/script.js"></script>
   </body>
 </html>
