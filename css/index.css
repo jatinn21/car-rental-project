@@ -8,6 +8,10 @@ html {
   font-size: 62.5%;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .reading-indicator {
   height: 0.5rem;
   background: linear-gradient(to bottom right, #ff512f, #dd2476);
@@ -93,12 +97,22 @@ nav {
 }
 
 .nav-link {
+  height: max-content;
+  width: max-content;
   cursor: pointer;
+  padding: 1rem 2rem;
   font-size: 1.9rem;
   margin: 0 2rem;
   font-family: thinFont;
   font-weight: 900;
   text-transform: capitalize;
+  transition: all 0.5s;
+  border-radius: 2rem;
+}
+
+.nav-link:hover {
+  background-color: white;
+  color: rgb(78, 123, 133);
 }
 
 .heading-section {
@@ -137,17 +151,17 @@ button.rent-now-btn {
   cursor: pointer;
 }
 
-.section--2 {
-  height: 70%;
-  padding: 10rem;
+section.section--2 {
+  height: 90%;
+  padding: 5rem;
   gap: 5%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .section--2--part {
-  height: 100%;
+  height: 80%;
   width: 30%;
-  /* border: 1px solid red; */
 }
 
 .section--2-partA {
@@ -158,7 +172,8 @@ button.rent-now-btn {
 }
 
 .section--2-partA h1,
-.section--3 h1.headline {
+.section--3 h1.headline,
+.section--4 h1.headline {
   font-size: 5rem;
   /* font-family: thinFont; */
   /* font-family: thickFont; */
@@ -201,7 +216,6 @@ button.rent-now-btn {
 .section--2-partC p:nth-child(2) {
   height: 80%;
   border-radius: 5rem;
-
   background-image: url("../assets/images/red-car-side-view.jpg");
   background-size: cover;
   background-position: center;
@@ -214,8 +228,8 @@ button.rent-now-btn {
   background-image: linear-gradient(
     to right,
     /* rgb(45, 75, 45),
-      rgb(20, 79, 20),
-      rgb(9, 70, 9) */
+    rgb(20, 79, 20),
+    rgb(9, 70, 9) */
       rgb(238, 243, 238),
     rgb(174, 178, 174),
     rgb(101, 104, 101)
@@ -248,11 +262,117 @@ model-viewer {
   display: none;
 }
 
-.rent-now-btn2 {
+.rent-now-btn2,
+.see-all-btn3 {
   padding: 1rem 1.5rem;
   background-color: white;
   color: #000;
   border: none;
   border-radius: 5rem;
   cursor: pointer;
+}
+
+.section--4 {
+  height: 70%;
+  padding: 5% 0 5% 5%;
+  width: 100%;
+  overflow: hidden;
+  color: red;
+  background-color: rgb(223, 218, 213);
+}
+
+.vehicles--part-top-section {
+  height: max-content;
+  padding: 1%;
+  width: 95%;
+  display: flex;
+  gap: 5rem;
+  justify-content: space-around;
+}
+
+.vehicles--part-top-section-left {
+  display: flex;
+  gap: 5rem;
+  width: max-content;
+  word-wrap: break-word;
+}
+
+.vehicles--top-desc {
+  font-size: 1.3rem;
+  color: black;
+  line-height: 150%;
+}
+.see-all-btn3 {
+  padding: 1rem 3rem;
+  font-size: 1.5rem;
+}
+
+.vehicles--part-caroursel {
+  height: 80%;
+  width: 100%;
+  padding: 0% 5%;
+  overflow: scroll;
+  display: flex;
+  gap: 3rem;
+}
+
+.card {
+  aspect-ratio: 1;
+  padding: 1rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+  border-radius: 2rem;
+}
+
+.card span.car-name,
+.card span.car-price {
+  height: 10%;
+  color: black;
+  width: max-content;
+  font-weight: 900;
+  font-size: 2rem;
+  font-family: thinFont;
+  text-transform: capitalize;
+  /* font-family: "Manrope", sans-serif;
+  font-family: "Orbitron", sans-serif; */
+}
+
+.card span.car-image {
+  height: 60%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.section--4 h1.headline {
+  /* height: 30rem; */
+  width: 100%;
+  color: black;
+  margin: 2rem;
+}
+
+footer {
+  height: max-content;
+  padding: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+  font-family: "Manrope", sans-serif;
+}
+
+footer a.creator {
+  height: max-content;
+  width: max-content;
+  font-weight: 900;
+  text-decoration: none;
+  color: grey;
+  transition: all 1s;
+}
+
+footer a.creator:hover {
+  color: #dd2476;
+  border-bottom: 1px solid;
 }
