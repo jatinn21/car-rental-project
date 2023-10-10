@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.reading-indicator {
+  height: 0.5rem;
+  background: linear-gradient(to bottom right, #ff512f, #dd2476);
+  top: 0;
+  left: 0;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  animation: progress linear;
+  animation-timeline: scroll(root);
+}
+
+@keyframes progress {
+  to {
+    width: 100%;
+  }
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section--1 {
+  height: 97%;
+  width: 100%;
+  padding: 1rem;
+  background-image: url("../assets/images/car\ background-2.jpg");
+  background-size: cover;
+}
+
+nav {
+  height: max-content;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+@font-face {
+  font-family: headingFont;
+  src: url("../assets/fonts/ChairmanButchier.ttf");
+}
+@font-face {
+  font-family: thinFont;
+  src: url("../assets/fonts/Genome-Thin.ttf");
+}
+@font-face {
+  font-family: mediumFont;
+  src: url("../assets/fonts/A750-Sans\ Medium.ttf");
+}
+
+@font-face {
+  font-family: thickFont;
+  src: url("../assets/fonts/A750-Sans\ Bold.ttf");
+}
+
+@font-face {
+  font-family: regularFont;
+  src: url("../assets/fonts/A750-Sans\ Regular.ttf");
+}
+
+.nav-links {
+  display: flex;
+  font-family: sans-serif;
+  /* gap: 5rem; */
+  color: white;
+}
+
+.nav-links:nth-child(2) {
+  /* width: 30%; */
+  font-size: 5rem;
+  font-weight: 900;
+  color: rgb(237, 232, 232);
+  font-family: headingFont;
+  /* font-family: "Manrope", sans-serif; */
+  /* font-family: "Orbitron", sans-serif; */
+}
+
+.nav-link {
+  cursor: pointer;
+  font-size: 1.9rem;
+  margin: 0 2rem;
+  font-family: thinFont;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+
+.heading-section {
+  height: max-content;
+  width: max-content;
+  font-family: thinFont;
+  font-weight: 700;
+  color: white;
+  font-size: 5rem;
+  margin: 10% 10%;
+  backdrop-filter: contrast(040%);
+  text-align: center;
+  position: relative;
+}
+
+.highlight {
+  width: max-content;
+  background-color: rgb(190, 188, 188);
+  font-family: headingFont;
+  font-weight: 900;
+  padding: 0 1rem;
+  color: rgb(255, 255, 255);
+}
+
+button.rent-now-btn {
+  border: none;
+  position: absolute;
+  transform: translate(50%, 50%);
+  padding: 1rem 2rem;
+  font-family: mediumFont;
+  text-decoration: underline;
+  font-size: 1.7rem;
+  border-radius: 5rem;
+  color: rgb(234, 206, 206);
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.section--2 {
+  height: 70%;
+  padding: 10rem;
+  gap: 5%;
+  display: flex;
+  justify-content: center;
+}
+.section--2--part {
+  height: 100%;
+  width: 30%;
+  /* border: 1px solid red; */
+}
+
+.section--2-partA {
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.section--2-partA h1,
+.section--3 h1.headline {
+  font-size: 5rem;
+  /* font-family: thinFont; */
+  /* font-family: thickFont; */
+  font-family: "Manrope", sans-serif;
+  font-family: "Orbitron", sans-serif;
+}
+
+.section--2-partA p {
+  font-size: 1.6rem;
+  line-height: 150%;
+  font-family: regularFont;
+}
+
+.section--2-partB {
+  background-image: url("../assets/images/red-car.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 5rem;
+}
+
+.section--2-partC {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.section--2-partC p:nth-child(1) {
+  height: 40%;
+  background-color: rgb(41, 39, 39);
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+  border-radius: 3rem;
+  font-family: "Manrope", sans-serif;
+  font-family: "Orbitron", sans-serif;
+}
+
+.section--2-partC p:nth-child(2) {
+  height: 80%;
+  border-radius: 5rem;
+
+  background-image: url("../assets/images/red-car-side-view.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.section--3 {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  background-image: linear-gradient(
+    to right,
+    /* rgb(45, 75, 45),
+      rgb(20, 79, 20),
+      rgb(9, 70, 9) */
+      rgb(238, 243, 238),
+    rgb(174, 178, 174),
+    rgb(101, 104, 101)
+  );
+  padding: 0 15%;
+  align-items: center;
+}
+
+.bestOffers {
+  width: 50%;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.section--3--part-description {
+  font-size: 3.4rem;
+  text-align: center;
+}
+
+.highlight-2 {
+  font-family: thinFont;
+  font-weight: 900;
+  line-height: 150%;
+  border-bottom: 1px solid black;
+}
+
+model-viewer {
+  height: 100%;
+  width: 50%;
+  display: none;
+}
+
+.rent-now-btn2 {
+  padding: 1rem 1.5rem;
+  background-color: white;
+  color: #000;
+  border: none;
+  border-radius: 5rem;
+  cursor: pointer;
+}
