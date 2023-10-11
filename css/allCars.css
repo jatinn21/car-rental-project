@@ -182,10 +182,9 @@ nav span {
 }
 
 .car-card {
-  height: max-content;
+  height: 40rem;
   width: 100%;
   padding: 2rem;
-  /* aspect-ratio: 1; */
   object-fit: contain;
   background-color: white;
   border-radius: 4rem;
@@ -198,7 +197,7 @@ nav span {
 }
 
 .car-card img.car-card-image {
-  height: 40%;
+  /* height: 40%; */
   width: 100%;
 }
 

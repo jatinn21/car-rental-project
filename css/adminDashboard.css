@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  background-color: rgb(13, 14, 16);
+  font-family: sans-serif;
+  display: flex;
+}
+
+::-webkit-scrollbar {
+  display: none !important;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.sidebar {
+  height: 100%;
+  width: 25%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top_side {
+  height: 40%;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.agency_img {
+  height: 80%;
+  border-radius: 50%;
+}
+
+p.greeting_name {
+  font-size: 2rem;
+}
+
+p.greeting_name span#agency_name {
+  font-weight: 900;
+}
+
+.bottom_side {
+  padding: 2rem 0;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.agency_feature {
+  height: max-content;
+  width: 100%;
+  padding: 1rem 2rem;
+  text-align: center;
+  background-color: rgb(62, 63, 62);
+  font-size: 3rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.logout_btn {
+  background-color: red;
+}
+
+#bottom_side_sidebar a {
+  text-decoration: none;
+  color: black;
+}
+
+.agency_feature:hover {
+  opacity: 0.8;
+}
+
+.admin_dashboard_body,
+.admin_addCar_body,
+.admin_ViewCars_body {
+  height: 100%;
+  width: 75%;
+}
+
+/* Admin_Dashboard Start */
+.twoBoxDiv {
+  height: 40%;
+  width: max-content;
+  padding: 2rem;
+  background-color: rgb(239, 155, 0);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-content: space-between;
+  font-size: 6rem;
+}
+
+#totalNumOfCars {
+  border-top: 1px solid white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  font-size: 10rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: rgb(237, 241, 237);
+  font-weight: 900;
+}
+/* Admin_Dashboard end */
+
+/* Admin_AddCars Start */
+section.admin_addCar_body {
+  gap: 2rem;
+}
+
+#addCar_form {
+  height: max-content;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 5rem;
+}
+
+#addCar_form label {
+  font-weight: 700;
+  color: white;
+}
+
+#addCar_form p {
+  height: max-content;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+  font-size: 2rem;
+}
+
+section form p input.car_form_field_input {
+  padding: 1rem 2rem;
+  width: 50rem;
+}
+
+.addCar_form_submit_Btn {
+  font-size: 3rem;
+  cursor: pointer !important;
+  font-weight: 900;
+}
+
+/* Admin_AddCars End */
+
+/* Admin_ViewCars Start */
+
+.admin_ViewCars_body {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  margin: 2% 0 0 0;
+}
+
+.styled-table {
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  /* width: 30%; */
+  /* background-color: red; */
+}
+
+#tbody_id {
+  /* max-height: 50rem; */
+  overflow: scroll;
+  /* width: max-content; */
+  background-color: orange;
+  overflow: scroll;
+}
+.styled-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+}
+.styled-table th,
+.styled-table td {
+  font-weight: 900;
+  width: max-content;
+  color: white;
+  padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+/* Admin_ViewCars End */

@@ -73,7 +73,49 @@
     <div class="caroursel__Title">Luxuries Cars on rent</div>
     <!-- Cards Section Start -->
     <section class="cars-cards">
-      <div class="car-card">
+      <?php 
+      include('./database_connection/admin_connection.php');
+      $sql = "SELECT * FROM `car`";
+      $result =  mysqli_query($conn, $sql);
+      if(mysqli_num_rows($result) > 0){
+            while( $val = mysqli_fetch_assoc($result)){
+              echo  '<div class="car-card">
+              <img
+                style="height:20rem;object-fit:cover"
+                src="'.$val['car_image'].'"
+                class="car-card-image"
+                alt="car image"
+              />
+              <p class="car-name">'.$val['car_name'].'</p>
+              <p class="car-model">'.$val['car_model'].'</p>
+              <p class="car-price-amount">$'.$val['car_rent'].'/day</p>
+              <p class="car-buttons">
+                <span class="car-details-btn car-button">Way to book..</span>
+              </p>
+            </div>';
+            }
+      }
+      else{
+        echo "<h1 width='100%' style='text-align:center;color:red'>No Cars</h1>";
+        }    
+      ?>
+      <!-- <div class="car-card">
+         echo  '<div class="car-card">
+              <img
+                src="'.$val['car_image'].'"
+                class="car-card-image"
+                alt="car image"
+              />
+              <p class="car-name">'.$val['car_name'].'</p>
+              <p class="car-model">'.$val['car_model'].'</p>
+              <p class="car-price-amount">$'.$val['car_rent'].'/day</p>
+              <p class="car-buttons">
+                <span class="car-details-btn car-button">Way to book..</span>
+              </p>
+            </div>';
+
+
+
         <img
           src="https://cars.tatamotors.com/images/all-cars/punch-click-to-drive.png"
           class="car-card-image"
@@ -84,10 +126,10 @@
         <p class="car-price-amount">$400/day</p>
         <p class="car-buttons">
           <span class="car-details-btn car-button">Way to book..</span>
-          <!-- <span class="car-booking-btn car-button">Book</span> -->
         </p>
-      </div>
-      <div class="car-card">
+      </div> -->
+
+      <!-- <div class="car-card">
         <img
           src="https://cars.tatamotors.com/images/all-cars/punch-click-to-drive.png"
           class="car-card-image"
@@ -98,9 +140,8 @@
         <p class="car-price-amount">$400/day</p>
         <p class="car-buttons">
           <span class="car-details-btn car-button">Way to book..</span>
-          <!-- <span class="car-booking-btn car-button">Book</span> -->
         </p>
-      </div>
+      </div> -->
     </section>
     <!-- Cards Section End -->
 
