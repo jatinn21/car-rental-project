@@ -7,6 +7,7 @@ const loginBtn = document.querySelector("#login");
 const signupBtn = document.querySelector("#signup");
 const loginCrossBtn = document.querySelector("#login-CrossBtn");
 const signupCrossBtn = document.querySelector("#signup-CrossBtn");
+const seeAllBtn = document.querySelector("#seeAllBtn");
 
 const aboutSection = document.querySelector(".section--2");
 const offersSection = document.querySelector(".section--3");
@@ -39,10 +40,18 @@ signupBtn.addEventListener("click", function () {
   signupModal.classList.remove("unactive");
 });
 
-loginCrossBtn.addEventListener("click", function () {
-  loginModal.classList.add("unactive");
-});
+// Closing Login & Signup Modals without violating DRY Principles
+function closingModal(btn, modal) {
+  btn.addEventListener("click", function () {
+    console.log("bye");
+    modal.classList.add("unactive");
+  });
+}
 
-signupCrossBtn.addEventListener("click", function () {
-  signupModal.classList.add("unactive");
+closingModal(loginCrossBtn, loginModal);
+closingModal(signupCrossBtn, signupModal);
+
+// Sending the user to See all Cars Sections
+seeAllBtn.addEventListener("click", () => {
+  window.location.href = "http://localhost/car-rental-project/allCars.php";
 });

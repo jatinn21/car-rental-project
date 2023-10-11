@@ -12,7 +12,7 @@
     href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Orbitron&display=swap"
     rel="stylesheet"
   />
-  <!-- import  -->
+  <!-- import for 3d Modelling -->
   <script
     type="module"
     src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
@@ -56,7 +56,7 @@
     <!-- Login Modal End-->
 
     <!-- Signup Modal Start -->
-    <section class="signup-modal center">
+    <section class="signup-modal center unactive">
       <span id="signup-CrossBtn">&cross;</span>
       <div class="signup-container center">
         <h1 class="headline">Registration Form</h1>
@@ -181,7 +181,7 @@
           <span class="vehicles--top-desc center"></span>
         </div>
         <div>
-          <span class="see-all-btn3">See All</span>
+          <span class="see-all-btn3" id="seeAllBtn">See All</span>
         </div>
       </div>
       <div class="vehicles--part-caroursel">
@@ -255,16 +255,9 @@
     </section>
     <!-- section 4 End-->
 
-    <!-- Footer starts -->
-    <footer>
-      Developed by
-      <a href="https://jatiin.netlify.app/" class="creator" target="_blank"
-        >Jatin Sharma</a
-      >
-      , a Frontend Designer.
-    </footer>
+    <!-- Footer starts -->     
+       <?php include('./footer.php')?>
     <!-- Footer End -->
-
     <script src="js/script.js"></script>
   </body>
 </html>

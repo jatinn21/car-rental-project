@@ -412,8 +412,10 @@ footer a.creator:hover {
 
 #login-CrossBtn:hover,
 #signup-CrossBtn:hover {
-  background-color: rgb(44, 42, 42);
+  /* background-color: rgb(44, 42, 42); */
+  backdrop-filter: contrast(40%);
   color: white;
+  border: 1px solid white;
 }
 
 .login-modal div.login-container,
@@ -464,4 +466,11 @@ input[type="submit"] {
   cursor: pointer;
   margin-top: 2rem;
   font-weight: 900;
+  transition: all 0.5s;
+  background-color: white;
+}
+
+input[type="submit"]:hover {
+  color: white !important;
+  background-color: black !important;
 }

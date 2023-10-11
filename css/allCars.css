@@ -1,0 +1,412 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  height: 100%;
+  background-color: rgb(13, 14, 16);
+  font-family: sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: headingFont;
+  src: url("../assets/fonts/ChairmanButchier.ttf");
+}
+@font-face {
+  font-family: thinFont;
+  src: url("../assets/fonts/Genome-Thin.ttf");
+}
+@font-face {
+  font-family: mediumFont;
+  src: url("../assets/fonts/A750-Sans\ Medium.ttf");
+}
+
+@font-face {
+  font-family: thickFont;
+  src: url("../assets/fonts/A750-Sans\ Bold.ttf");
+}
+
+@font-face {
+  font-family: regularFont;
+  src: url("../assets/fonts/A750-Sans\ Regular.ttf");
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  height: max-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3% 10%;
+  text-transform: capitalize;
+  font-family: "Manrope", sans-serif;
+  font-family: "Orbitron", sans-serif;
+}
+
+.allCars--backButton {
+  padding: 1rem 2rem;
+  background-color: white;
+  font-size: 1.3rem;
+  color: black;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.allCars--backButton:hover {
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+}
+
+nav span {
+  font-size: 3rem;
+  color: white;
+}
+
+/* caroursel start */
+.carourselParent {
+  display: flex;
+  width: 100vw;
+}
+
+.caroursel {
+  height: 30rem !important;
+  /* animation: scroll 30s linear infinite; */
+}
+
+.card {
+  min-height: 22rem !important;
+  width: 22rem;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  color: white !important;
+  background-color: transparent;
+  margin: 0 1rem;
+  border-radius: 1.5rem;
+  position: relative;
+  text-transform: capitalize;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Manrope", sans-serif;
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Set the Cars Images start */
+.card:nth-child(1) {
+  background-image: url("https://imgs.search.brave.com/E3ie30fqmXzpiyFWVDvgRHxRq6xBt-5MhAgjnmQq774/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/Y2FybG9nb3Mub3Jn/L2Nhci1sb2dvcy9i/bXctbG9nby0yMDIw/LnBuZw");
+}
+.card:nth-child(2) {
+  background-image: url("https://imgs.search.brave.com/am3KV98MwlutRGcfZkrOKqgeeVidoj0B7-wiDyNNolE/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9mYWJy/aWticmFuZHMuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy9GZXJy/YXJpLUxvZ28tMi0x/MjAweDc1MC5wbmc");
+}
+.card:nth-child(3) {
+  background-image: url("https://imgs.search.brave.com/zsOD_RteTrkrGPz0JYNCmDGI4tmZBEik0VuzKVCsAoU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/Y2FybG9nb3Mub3Jn/L2Nhci1sb2dvcy9t/ZXJjZWRlcy1iZW56/LWxvZ28ucG5n");
+}
+.card:nth-child(4) {
+  background-image: url("https://imgs.search.brave.com/x0oqXyFOpR2N22ELzOmhh39pPvIL_ui6Anesdm6FMlw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzL2xhbmQt/cm92ZXI5NTU3Lmpw/Zw");
+}
+.card:nth-child(5) {
+  background-image: url("https://imgs.search.brave.com/_ML01VZhDIK6IFAkli3n67iVwe88-HPC8hYDd79YoGs/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDE4MzEw/NTIuanBn");
+}
+.card:nth-child(6) {
+  background-image: url("https://imgs.search.brave.com/I54IAq4shpvXAJ6Tc4DFy2X-OiIA0yv8fzO2Zy1D7nA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzLzEyN19t/aW5pY29vcGVyLmpw/Zw");
+}
+.card:nth-child(7) {
+  background-image: url("https://imgs.search.brave.com/CVfJdIhFDjXetIhOQK5gXH6E-MCm9nXywCO2sg2A1s4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly8xMDAw/bG9nb3MubmV0L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIwLzAz/L01jTGFyZW4tTG9n/by0yMDAyLTUwMHgz/MjEuanBn");
+}
+.card:nth-child(8) {
+  background-image: url("https://imgs.search.brave.com/tyVDC1Gds3Qa97XkCPGm7ZYxK0Ru20UOOjjYBWTSHMI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/bG9nby53aW5lL2Ev/bG9nby9UZXNsYSxf/SW5jLi9UZXNsYSxf/SW5jLi1Mb2dvbWFy/ayZXb3JkbWFyazIt/RGFyay1CYWNrZ3Jv/dW5kLUxvZ28ud2lu/ZS5zdmc.svg");
+}
+/* Set the Cars Images end */
+
+.card span {
+  width: 100%;
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: bolder;
+  background-color: rgba(0, 0, 0, 0.765);
+  text-align: center;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* This is for headingContainer */
+.caroursel__Title {
+  text-align: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+  font-weight: bolder;
+  font-family: "Manrope", sans-serif;
+  text-decoration: underline;
+  text-transform: capitalize;
+
+  margin: 5rem;
+}
+/* caroursel end */
+
+/* Cars Cards Start */
+.cars-cards {
+  height: max-content;
+  padding: 2rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.car-card {
+  height: max-content;
+  width: 100%;
+  padding: 2rem;
+  /* aspect-ratio: 1; */
+  object-fit: contain;
+  background-color: white;
+  border-radius: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid green;
+  overflow: hidden;
+}
+
+.car-card img.car-card-image {
+  height: 40%;
+  width: 100%;
+}
+
+.car-card p.car-name {
+  font-size: 4rem;
+  font-family: headingFont;
+}
+
+.car-card p.car-model,
+.car-price-amount {
+  font-style: italic;
+  font-family: thinFont;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+.car-card p.car-buttons {
+  width: max-content;
+  padding: 1rem;
+  font-size: 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.car-card p.car-buttons .car-button,
+.car-booking-btn {
+  /* font-family: thinFont; */
+  font-family: "Manrope", sans-serif;
+  font-family: "Orbitron", sans-serif;
+  background-color: white;
+  border: 1px solid black;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  transition: all 0.8s;
+  border-radius: 0.8rem;
+}
+
+.car-card p.car-buttons .car-button:hover,
+.car-booking-btn:hover {
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+}
+
+.disableBtn {
+  cursor: not-allowed;
+  background-color: grey;
+  color: black;
+}
+
+.disableBtn:hover {
+  color: black;
+
+  cursor: not-allowed;
+  background-color: grey;
+}
+
+.car-booking-btn {
+  font-size: 2rem;
+}
+
+/* Car booking Modal Start*/
+.booking-modal {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(1rem);
+}
+
+.booking-container {
+  background-color: aliceblue;
+  height: 100%;
+  opacity: 0.6;
+  width: 100%;
+  flex-direction: column;
+  padding: 4rem;
+  gap: 5rem;
+}
+
+.booking-container div.top-booking-section {
+  height: 30%;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.car-brand-model {
+  height: auto;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 4rem;
+  font-family: thinFont;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.car-company-name,
+.car-model-name {
+  font-style: normal;
+  font-family: "Manrope", sans-serif;
+  font-family: "Orbitron", sans-serif;
+}
+
+.booking-container div.middle-booking-section {
+  height: max-content;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.styled-table {
+  font-family: regularFont;
+  font-size: 2rem;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.68);
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 2rem;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.Factor {
+  background-color: #333535;
+  color: white;
+  font-size: 3rem;
+  font-family: "Manrope", sans-serif;
+  font-family: "Orbitron", sans-serif;
+}
+
+.main-point {
+  background-color: #202121;
+  color: white;
+  font-weight: 900;
+}
+
+#bookingModal-CrossBtn {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4rem;
+  font-size: 5rem;
+  border: 1px solid rgb(31, 30, 30);
+  cursor: pointer;
+  transition: 0.6s;
+  z-index: 9;
+  background-color: white;
+  color: rgb(42, 40, 40);
+}
+
+#bookingModal-CrossBtn:hover {
+  background-color: rgb(51, 49, 49);
+  color: white;
+  border: 1px solid white;
+}
+
+.unactive {
+  display: none;
+}
+
+.bottom-booking-section {
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Car booking Modal End*/
+
+/* Footer section start*/
+footer {
+  height: max-content;
+  padding: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+  font-family: "Manrope", sans-serif;
+  color: white;
+}
+
+footer a.creator {
+  height: max-content;
+  width: max-content;
+  font-weight: 900;
+  text-decoration: none;
+  color: grey;
+  transition: all 1s;
+}
+
+footer a.creator:hover {
+  color: #dd2476;
+  border-bottom: 1px solid;
+}
+
+.unactive {
+  display: none;
+}
+/* Footer section End */
