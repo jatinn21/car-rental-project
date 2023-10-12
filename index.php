@@ -26,6 +26,63 @@
     <div class="reading-indicator"></div>
     <!-- progress bar ends -->
 
+    <!-- Registering new user start-->
+    <?php 
+      include('./database_connection/admin_connection.php');
+      if(isset($_POST['signup-submit-btn'])){
+        $signup_name = $_POST['signup_name'];
+        $signup_email =$_POST['signup_email'];
+        $signup_password = $_POST['signup_password'];
+        if($signup_name !="" && $signup_email !="" && $signup_password !=""){
+
+        $sql1 = "SELECT * FROM `user` WHERE user_email = '$signup_email'";
+        $result1 = mysqli_query($conn,$sql1);
+
+        $sql2 = "SELECT * FROM `agency` WHERE agency_email = '$signup_email'";
+        $result2 = mysqli_query($conn,$sql2);
+
+        if(mysqli_num_rows($result1) == 0 && mysqli_num_rows($result2) ==0 ) {
+            $sql3 = "INSERT INTO `user` (`user_name`, `user_email`, `user_password`) VALUES ('$signup_name', '$signup_email', '$signup_password')";
+            $query = mysqli_query($conn,$sql3);
+           echo "<script>alert('Account Registered Successfully')</script>";
+
+        }else{
+           echo "<script>alert('Sorry... email already taken')</script>";
+        }
+        }
+      }
+    ?>
+    <!-- Registering new user end-->
+
+    <!-- logged new user start-->
+  <?php
+  error_reporting(0);
+    if(isset($_POST['login-submit-btn'])){
+    $loginEmail = $_POST['loginEmail'];
+    $loginPassword = $_POST['loginPassword'];
+
+
+    if($loginEmail !="" && $loginPassword !="" ){
+
+      $sql = "SELECT * FROM user WHERE user_email='$loginEmail' and user_password = '$loginPassword'";
+      $res = mysqli_query($conn, $sql);
+
+      if(mysqli_num_rows($res) == 1) {
+        while( $val = mysqli_fetch_assoc($res)){
+         echo "<script>alert('Logged In Successfully.')</script>";
+        // creating Session    
+         session_start();
+         $_SESSION['user_email'] = $val['user_email'];
+         $_SESSION['user_id'] = $val['id'];
+
+        }
+      }else{
+         echo "<script>alert('Sorry...Wrong Credentials')</script>";
+      }
+    }}  
+  ?>
+    <!-- logged new user end-->
+
     <!-- Login Modal Start -->
     <section class="login-modal center unactive">
       <span id="login-CrossBtn">&cross;</span>
@@ -49,7 +106,7 @@
               name="loginPassword"
             />
           </p>
-          <input type="submit" class="login-submit-btn" value="Login" />
+          <input type="submit" class="login-submit-btn" name="login-submit-btn" value="Login" />
         </form>
       </div>
     </section>
@@ -60,13 +117,14 @@
       <span id="signup-CrossBtn">&cross;</span>
       <div class="signup-container center">
         <h1 class="headline">Registration Form</h1>
-        <form class="signup-form" method="post" autocomplete="off">
+        <form action="#" class="signup-form" method="post" autocomplete="off">
           <p>
             <label for="signup_name" class="label-text">Name</label>
             <input
-              type="text"
+              type="text" 
+              required
               placeholder="John Doe"
-              name="signupName"
+              name="signup_name"
               autocomplete="off"
             />
           </p>
@@ -74,20 +132,22 @@
             <label for="signup_email" class="label-text">Email</label>
             <input
               type="email"
+              required
               placeholder="email@email.com"
               autocomplete="off"
-              name="signupEmail"
+              name="signup_email"
             />
           </p>
           <p>
-            <label for="signup_password" class="label-text">Password</label>
+            <label for="signup_password"  class="label-text">Password</label>
             <input
               type="password"
-              name="signupPassword"
+              required
+              name="signup_password"
               placeholder="**********"
             />
           </p>
-          <input type="submit" class="signup-submit-btn" value="signup" />
+          <input type="submit" class="signup-submit-btn" name="signup-submit-btn" value="signup" />
         </form>
       </div>
     </section>
@@ -106,8 +166,18 @@
           <span class="logo">HireCars</span>
         </ul>
         <ul class="nav-links center right-link-section">
-          <span class="nav-link" id="login">Login</span>
-          <span class="nav-link" id="signup">Signup</span>
+          <?php
+            session_start();
+            if(isset($_SESSION['user_email'])){
+              echo '<a class="nav-link" 
+              href="./user_BookedVehicle.php"
+              id="booked_Vehicle" >Booked Vehicles</a>';
+              echo '<a class="nav-link" href="./user_logout.php" id="logout" >Logout</a>';
+            }else{
+              echo '  <span class="nav-link" id="login">Login</span>
+              <span class="nav-link" id="signup">Signup</span>';
+            }
+          ?>
         </ul>
       </nav>
       <!-- navbar ends -->
@@ -115,10 +185,12 @@
         <p class="headline">
           Luxuary car<br /><span class="highlight">rental in Bharat</span>
         </p>
-        <button class="rent-now-btn">Rent Now</button>
+        <button class="rent-now-btn" id="rentNow"><a href="http://localhost/car-rental-project/allCars.php">Rent Now</a></button>
       </div>
     </section>
     <!-- section 1 End -->
+    
+  
 
     <!-- section 2 start --  About section-->
     <section class="section--2">
@@ -158,12 +230,13 @@
           <span class="highlight-2">Tesla Model S &nbsp;&rightarrow;</span
           ><br />for $400/day
         </p>
-        <button class="rent-now-btn2">Rent Now</button>
+        <button class="rent-now-btn2"><a href="http://localhost/car-rental-project/allCars.php">Rent Now</a></button>
       </div>
       <model-viewer
         loading="eager"
         disable-zoom
         disable-tap
+        poster="https://imgs.search.brave.com/sFGgYB7EVTnY8Tk-iEh-etetBypkjsjVIqTiTI8e5Vg/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9paDEu/cmVkYnViYmxlLm5l/dC9pbWFnZS4yNzQ5/MDcxNDI0LjE0NjIv/cG9zdGVyLDUwNHg0/OTgsZjhmOGY4LXBh/ZCw2MDB4NjAwLGY4/ZjhmOC51My5qcGc"
         src="./assets/tesla_2018_model_3.glb"
         alt="VR Headset"
         auto-rotate
@@ -181,7 +254,7 @@
           <span class="vehicles--top-desc center"></span>
         </div>
         <div>
-          <span class="see-all-btn3" id="seeAllBtn">See All</span>
+        <button class="rent-now-btn2"><a href="http://localhost/car-rental-project/allCars.php">See All</a></button>
         </div>
       </div>
       <div class="vehicles--part-caroursel">

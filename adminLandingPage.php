@@ -47,9 +47,10 @@
             if(mysqli_num_rows($res) == 1) {
                echo "<script>alert('Redirecting to Admin Dashboard')</script>";
               // creating Session    
+                $val = mysqli_fetch_assoc($res);
                session_start();
                $_SESSION['email'] = $agency_login_email;
-               $_SESSION['id'] = $agency_login_email;
+               $_SESSION['id'] = $val['agency_id'];
 
                header("location:http://localhost/car-rental-project/adminDashboard.php");
 

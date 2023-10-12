@@ -29,6 +29,7 @@ echo '
         <a class="agency_feature" id="dashboard_Btn" href="./adminDashboard.php">Dashboard</a>
         <a class="agency_feature" id="addCar_Btn" href="./admin_AddCar.php">Add Car</a>
         <a class="agency_feature" id="viewAllCar_Btn" href="./admin_ViewCars.php">View All Cars</a>
+        <a class="agency_feature" id="bookedCar_Btn" href="./admin_viewAllBookedCars.php">Booked Cars</a>
         <a class="agency_feature" id="updateCar_Btn" href="./admin_UpdateCar.php">Update Car</a>
         <a class="agency_feature" id="deleteCar_Btn" href="./admin_DeleteCar.php">Delete Car</a>
         <a class="agency_feature logout_btn" id="logout_Btn" href="./admin_LogOut.php">Logout</a>

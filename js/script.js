@@ -8,12 +8,14 @@ const signupBtn = document.querySelector("#signup");
 const loginCrossBtn = document.querySelector("#login-CrossBtn");
 const signupCrossBtn = document.querySelector("#signup-CrossBtn");
 const seeAllBtn = document.querySelector("#seeAllBtn");
+const backToHome = document.querySelector("#backToHome");
 
 const aboutSection = document.querySelector(".section--2");
 const offersSection = document.querySelector(".section--3");
 const vehiclesSection = document.querySelector(".section--4");
 const loginModal = document.querySelector(".login-modal");
 const signupModal = document.querySelector(".signup-modal");
+const rentNow = document.querySelector("#rentNow");
 
 // Scrolling Effect start
 aboutBtn.addEventListener("click", () => {
@@ -54,4 +56,13 @@ closingModal(signupCrossBtn, signupModal);
 // Sending the user to See all Cars Sections
 seeAllBtn.addEventListener("click", () => {
   window.location.href = "http://localhost/car-rental-project/allCars.php";
+});
+
+rentNow.addEventListener("click", () => {
+  window.location.href = "http://localhost/car-rental-project/allCars.php";
+});
+
+backToHome.addEventListener("click", () => {
+  console.log("hii");
+  window.location.href = "http://localhost/car-rental-project/";
 });

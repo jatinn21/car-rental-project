@@ -116,6 +116,15 @@ nav {
   color: rgb(78, 123, 133);
 }
 
+ul.nav-links.center.right-link-section a {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+ul.nav-links.center.right-link-section a:hover {
+  color: red !important;
+}
+
 .heading-section {
   height: max-content;
   width: max-content;
@@ -150,6 +159,15 @@ button.rent-now-btn {
   color: rgb(234, 206, 206);
   background-color: rgb(255, 255, 255);
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(234, 206, 206);
+}
+
+.rent-now-btn2 a {
+  color: black;
 }
 
 section.section--2 {
@@ -262,7 +280,6 @@ section.section--2 {
 model-viewer {
   height: 100%;
   width: 50%;
-  display: none;
 }
 
 .rent-now-btn2,
@@ -473,4 +490,59 @@ input[type="submit"] {
 input[type="submit"]:hover {
   color: white !important;
   background-color: black !important;
+}
+
+form section span.car-booking-btn {
+  color: red !important;
+}
+
+div#carModal {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0100;
+  background-color: red;
+}
+/* ------------------------------ */
+.styled-table {
+  font-size: 2em;
+  font-family: sans-serif;
+  width: 80%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+.styled-table th,
+.styled-table td {
+  padding: 1rem 1.5rem;
+}
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+#backToHome {
+  height: 10rem;
+  width: 10rem;
+  top: 0%;
+  right: 5%;
+  position: fixed;
+  text-decoration: none;
+  color: white;
+  font-size: 3rem;
+  background-color: #009879;
+  cursor: pointer;
+  font-weight: 900;
+  text-decoration: underline;
+  transition: all 0.5s;
+  z-index: 9999;
+}
+
+#backToHome:hover {
+  opacity: 0.7;
 }

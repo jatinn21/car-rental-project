@@ -72,14 +72,14 @@
 
     <div class="caroursel__Title">Luxuries Cars on rent</div>
     <!-- Cards Section Start -->
-    <section class="cars-cards">
-      <?php 
+    <?php 
       include('./database_connection/admin_connection.php');
-      $sql = "SELECT * FROM `car`";
+      $sql = "SELECT * FROM `car` WHERE `car_status` = 'UNBOOK' ";
       $result =  mysqli_query($conn, $sql);
       if(mysqli_num_rows($result) > 0){
+        echo "<section class='cars-cards'>";
             while( $val = mysqli_fetch_assoc($result)){
-              echo  '<div class="car-card">
+              echo  '<div class="car-card" style="height:100%">
               <img
                 style="height:20rem;object-fit:cover"
                 src="'.$val['car_image'].'"
@@ -90,106 +90,22 @@
               <p class="car-model">'.$val['car_model'].'</p>
               <p class="car-price-amount">$'.$val['car_rent'].'/day</p>
               <p class="car-buttons">
-                <span class="car-details-btn car-button">Way to book..</span>
+              <form action="./carDetails.php" method="get">
+              <input type="hidden" name="utm_source" value="'.$val['car_id'].'" /> 
+              <input type="submit" class="car-details-btn"  value="Way to book..."/>
+              </form>  
               </p>
             </div>';
             }
       }
       else{
-        echo "<h1 width='100%' style='text-align:center;color:red'>No Cars</h1>";
+        echo "<h1 width='max-content' style='text-align:center;color:orangered;font-size:6rem'>No Cars are available</h1>";
         }    
       ?>
-      <!-- <div class="car-card">
-         echo  '<div class="car-card">
-              <img
-                src="'.$val['car_image'].'"
-                class="car-card-image"
-                alt="car image"
-              />
-              <p class="car-name">'.$val['car_name'].'</p>
-              <p class="car-model">'.$val['car_model'].'</p>
-              <p class="car-price-amount">$'.$val['car_rent'].'/day</p>
-              <p class="car-buttons">
-                <span class="car-details-btn car-button">Way to book..</span>
-              </p>
-            </div>';
-
-
-
-        <img
-          src="https://cars.tatamotors.com/images/all-cars/punch-click-to-drive.png"
-          class="car-card-image"
-          alt="car image"
-        />
-        <p class="car-name">Mercedes-Benz</p>
-        <p class="car-model">E-class</p>
-        <p class="car-price-amount">$400/day</p>
-        <p class="car-buttons">
-          <span class="car-details-btn car-button">Way to book..</span>
-        </p>
-      </div> -->
-
-      <!-- <div class="car-card">
-        <img
-          src="https://cars.tatamotors.com/images/all-cars/punch-click-to-drive.png"
-          class="car-card-image"
-          alt="car image"
-        />
-        <p class="car-name">Mercedes-Benz</p>
-        <p class="car-model">E-class</p>
-        <p class="car-price-amount">$400/day</p>
-        <p class="car-buttons">
-          <span class="car-details-btn car-button">Way to book..</span>
-        </p>
-      </div> -->
     </section>
     <!-- Cards Section End -->
 
-    <!-- Car Booking Modal Start-->
-    <section class="booking-modal center unactive">
-      <span id="bookingModal-CrossBtn">&cross;</span>
-      <div class="booking-container">
-        <div class="top-booking-section">
-          <img
-            src="https://cars.tatamotors.com/images/all-cars/punch-click-to-drive.png"
-            alt="photo"
-          />
-          <p class="car-brand-model center">
-            <span><b>Car name : </b><span class="car-company-name">Mercedes-Benz</span></span>
-            <span><b>Model : </b><span class="car-model-name">E-class</span></span>
-          </p>
-        </div>
-        <div class="middle-booking-section">
-            <p class="Booking-Car-Name center">
-                <table class="styled-table">
-                    <tbody>
-                        <tr>
-                            <th class="main-point">Vehicle Number</th>
-                            <td>GJ-1A-A1466</td>
-                        </tr>
-                        <tr>
-                            <th class="main-point">Seating Capacity</th>
-                            <td>6 seats</td>
-                        </tr>
-                        <tr>
-                            <th class="main-point">Price per day</th>
-                            <td>600$</td>
-                        </tr>
-                        <tr>
-                            <th class="main-point">Fuel</th>
-                            <td>Petrol</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </p>
-        </div>
-        <div class="bottom-booking-section">
-                <span class="car-booking-btn car-button disableBtn">Book</span>
-        </div>
-      </div>
-    </section>
-      <!-- Car Booking Modal End-->
-      
+
       <!-- Footer Start -->
       <?php include('./footer.php') ?>
       <!-- Footer End -->

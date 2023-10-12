@@ -89,7 +89,7 @@ nav span {
 
 .caroursel {
   height: 30rem !important;
-  /* animation: scroll 30s linear infinite; */
+  animation: scroll 30s linear infinite;
 }
 
 .card {
@@ -223,8 +223,7 @@ nav span {
   justify-content: space-between;
 }
 
-.car-card p.car-buttons .car-button,
-.car-booking-btn {
+.car-card p.car-buttons .car-button {
   /* font-family: thinFont; */
   font-family: "Manrope", sans-serif;
   font-family: "Orbitron", sans-serif;
@@ -258,6 +257,23 @@ nav span {
 
 .car-booking-btn {
   font-size: 2rem;
+}
+
+.car-details-btn {
+  font-family: "Manrope", sans-serif;
+  font-family: "Orbitron", sans-serif;
+  background-color: white;
+  border: 1px solid black;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  font-size: 2rem;
+  transition: all 0.8s;
+}
+
+.car-details-btn:hover {
+  background-color: black;
+  border: 1px solid white;
+  color: white;
 }
 
 /* Car booking Modal Start*/

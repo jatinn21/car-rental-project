@@ -13,8 +13,22 @@ backBtn.addEventListener("click", function () {
 });
 
 // Open booking Modal
-carDetailsBtn.addEventListener("click", function () {
-  bookingModal.classList.remove("unactive");
+// carDetailsBtn.addEventListener("click", function () {
+//   bookingModal.classList.remove("unactive");
+// });
+
+[...document.getElementsByClassName("car-details-btn")].forEach((ele) => {
+  ele.addEventListener("click", function () {
+    // console.log(this);
+    // console.log(this.dataset.cardid);
+    // console.log(this.dataset.cardId);
+    let a = this.dataset.carid;
+    console.log(a);
+    let newUrl = window.location.href + `?${a}`;
+    console.log(newUrl);
+    // window.location.href = newUrl;
+    // bookingModal.classList.remove("unactive");
+  });
 });
 
 // Close booking Modal
